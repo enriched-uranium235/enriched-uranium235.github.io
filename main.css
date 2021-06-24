@@ -89,11 +89,15 @@ body {
     color: red;
 }
 
+.hide {
+  display: none;
+}
+
 * {
     box-sizing: border-box;
   }
   #app {
-    max-width: 640px;
+    max-width:800px;
     margin: 0 auto;
   }
   table {
