@@ -1,0 +1,153 @@
+.title {
+    font-size: 60px;
+    text-align: center;
+    font-weight: bold;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: #ffee76;
+    -webkit-text-fill-color: #78ff78;
+}
+
+.serif {
+    font-family: serif;
+}
+
+.center {
+    text-align: center;
+}
+
+.number-form {
+    width: 60px;
+}
+
+.number-form2 {
+    width: 40px;
+}
+
+.w170 {
+    width: 170px;
+}
+
+.bg-white {
+    background-color: #fff;
+}
+
+.image-size {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background: linear-gradient(105deg, #05ef66, #efef66);
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.balloon {
+    position: relative;
+    display: inline-block;
+    margin: 1.5em 0;
+    padding: 7px 10px;
+    min-width: 120px;
+    max-width: 100%;
+    color: #555;
+    font-size: 16px;
+    background: #FFF;
+    border: solid 3px #555;
+    box-sizing: border-box;
+}
+  
+.balloon:before {
+    content: "";
+    position: absolute;
+    bottom: -24px;
+    left: 50%;
+    margin-left: -15px;
+    border: 12px solid transparent;
+    border-top: 12px solid #FFF;
+    z-index: 2;
+}
+  
+.balloon:after {
+    content: "";
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    margin-left: -17px;
+    border: 14px solid transparent;
+    border-top: 14px solid #555;
+    z-index: 1;
+}
+  
+.balloon p {
+    margin: 0;
+    padding: 0;
+}
+
+.text-red {
+    color: red;
+}
+
+* {
+    box-sizing: border-box;
+  }
+  #app {
+    max-width: 640px;
+    margin: 0 auto;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  thead th {
+    border-top: 2px solid #00ef90;
+    border-bottom: 2px solid #00ef90; /*#d31c4a */
+    border-right: 2px solid #00ef90;
+    border-left: 2px solid #00ef90;
+    color: #45ff98;
+  }
+  th,
+  th {
+    padding: 0 8px;
+    line-height: 40px;
+  }
+  thead th.id {
+    width: 50px;
+  }
+  thead th.state {
+    width: 100px;
+  }
+  thead th.button {
+    width: 60px;
+  }
+  tbody td.button, tbody td.state {
+    text-align: center;
+  }
+  tbody tr td,
+  tbody tr th {
+    border-top: 1px double #ffee67;
+    border-right: 1px solid #ffee67;
+    border-left: 1px solid #ffee67;
+    border-bottom: 1px solid #ffee67;
+    transition: all 0.4s;
+  }
+  tbody tr.done td,
+  tbody tr.done th {
+    background: #f8f8f8;
+    color: #bbb;
+  }
+  tbody tr:hover td,
+  tbody tr:hover th {
+    background: #f4fbff;
+  }
+  button {
+    border: none;
+    border-radius: 20px;
+    line-height: 24px;
+    padding: 0 8px;
+    background: #78ff78;
+    border: 2px solid #ffee76;
+    color: #fff;
+    cursor: pointer;
+  }
