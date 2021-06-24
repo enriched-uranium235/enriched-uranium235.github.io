@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Vue.js App</title>
+  <link rel="stylesheet" href="./main.css">
+</head>
+<body>
+
+  <div id="app">
+    <h1 class="title serif">ToDoリスト</h1>
+
+    <div class="balloon">
+        <p class="bold">　リストに追加された予定は毎日20:00に確認し、翌日の予定をリストアップして通知させていただきます！翌日の7:00にも当日の予定を再度通知させていただきます！</p>
+    </div>
+
+    <img src="todo-sozai.png" class="image-size">
+
+    <!-- ★STEP6 -->
+    <h2 class="serif center">新しいタスクの追加</h2>
+    <form class="add-form" v-on:submit.prevent="doAdd">
+        <!-- コメント入力フォーム -->
+        予定:<input type="text" ref="comment">
+        <!-- 年 -->
+        日時:<input class="number-form" type="number" ref="year"> 年
+        <!-- 月 -->
+        <input class="number-form2" type="number" ref="month"> 月
+        <!-- 日 -->
+        <input class="number-form2" type="number" ref="day"> 日
+        <!-- 時 -->
+        <input class="number-form2" type="number" ref="hour"> 時
+        <!-- 分 -->
+        <input class="number-form2" type="number" ref="minute"> 分
+        <!-- 追加ボタンのモック -->
+        <button type="submit">追加</button>
+    </form>
+
+    <label v-for="label in options" >
+      <input type="radio"
+        v-model="current"
+        v-bind:value="label.value">{{ label.label }}
+    </label>
+      
+    （{{ computedTodos.length }} 件）
+
+    <div class="bg-white">
+
+    <table>
+      <thead v-pre>
+        <tr>
+          <th class="id">ID</th>
+          <th class="comment">コメント</th>
+          <th class="year">年</th>
+          <th class="month">月</th>
+          <th class="day">日</th>
+          <th class="hour">時</th>
+          <th class="minute">分</th>
+          <th class="state">状態</th>
+          <th class="button">-</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          v-for="item in computedTodos"
+          v-bind:key="item.id"
+          v-bind:class="{done:item.state}">
+          <th>{{ item.id }}</th>
+          <td id="comment" class="w170">{{ item.comment }}</td>
+          <td id="year">{{ item.year }}</td>
+          <td id="month">{{ item.month }}</td>
+          <td id="day">{{ item.day }}</td>
+          <td id="hour">{{ item.hour }}</td>
+          <td id="minute">{{ item.minute }}</td>
+          <td class="state">
+            <button v-on:click="doChangeState(item)">
+              {{ labels[item.state] }}
+            </button>
+          </td>
+          <td class="button">
+            <button v-on:click="doRemove(item)">
+              削除
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    </div>
+
+    <p class="bold text-red">※このコンテンツはLINEボットアリアの拡張機能として作成したものです。先にアリアを友達登録しなければ通知機能は使えません。</p>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script src="./main.js"></script>
+</body>
+</html>
