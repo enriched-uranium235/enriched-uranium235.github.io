@@ -48,13 +48,11 @@
     <table>
       <thead v-pre>
         <tr>
+        <tr>
           <th class="id">ID</th>
           <th class="comment">タスク</th>
-          <th class="year">年</th>
-          <th class="month">月</th>
-          <th class="day">日</th>
-          <th class="hour">時</th>
-          <th class="minute">分</th>
+          <th class="day">日付</th>
+          <th class="time">時間</th>
           <th class="state">状態</th>
           <th class="button">-</th>
         </tr>
@@ -66,11 +64,9 @@
           v-bind:class="{done:item.state}">
           <th>{{ item.id }}</th>
           <td id="comment" class="w170">{{ item.comment }}</td>
-          <td id="year">{{ item.year }}</td>
-          <td id="month">{{ item.month }}</td>
-          <td id="day">{{ item.day }}</td>
-          <td id="hour">{{ item.hour }}</td>
-          <td id="minute">{{ item.minute }}</td>
+          <td id="day">{{ item.year }}/{{item.month}}/{{ item.day }}</td>
+          <td id="time">{{ item.hour }}:{{ item.minute }}</td>
+          <td class="hide">{{ item.comment }}, {{item.year}}年{{item.month}}月{{item.day}}日, {{item.hour}}時{{item.minute}}分</td>
           <td class="state">
             <button v-on:click="doChangeState(item)">
               {{ labels[item.state] }}
